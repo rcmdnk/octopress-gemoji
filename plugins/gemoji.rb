@@ -6,14 +6,11 @@ require 'gemoji'
 module Jekyll
   class Gemoji < Liquid::Tag
     def initialize(name, markup, tokens)
-      arr = markup.split(" ")
-      @emoji = ""
-      return if arr.size != 1
-      @emoji = arr[0]
+      @emoji = markup
     end
 
     def render(context)
-      if @emoji
+      if @emoji != ""
         config = context.registers[:site].config
         if config['emoji_dir']
           if config['emoji_dir'].start_with?('http')
@@ -25,6 +22,8 @@ module Jekyll
 
         if Emoji.names.include?(@emoji) and emoji_dir
           '<img alt="' + @emoji + '" src="' + config['emoji_dir'] + "/#{@emoji}.png" + '" class="emoji" />'
+        else
+          ""
         end
       else
         ""
