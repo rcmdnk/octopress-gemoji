@@ -9,9 +9,9 @@ There is a similar plugin, [jekyll-emoji](https://github.com/chriskempson/jekyll
 # Installation
 
 1. Copy `plugins/gemoji.rb` to your `plugins` directory,
-and `sass/custom/_gemoji.scss` to your `sass/custom/` directory.
+and `sass/plugins/_gemoji.scss` to your `sass/plugins/` directory.
 
-1. Add a following line to `sass/custom/_styles.scss`:
+1. Add a following line to `sass/plugins/_plugins.scss`:
 
     @import "gemoji";
 
