@@ -33,3 +33,7 @@ Use tag `gemoji` + `emoji names`:
 will be :smile:.
 
 See [EMOJI CHEAT SHEET](http://www.emoji-cheat-sheet.com/) for more emojis.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rcmdnk/octopress-gemoji/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
