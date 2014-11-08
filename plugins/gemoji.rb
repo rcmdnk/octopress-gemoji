@@ -20,10 +20,11 @@ module Jekyll
           end
         end
 
-        if Emoji.names.include?(@emoji) and emoji_dir
+        emoji = Emoji.find_by_alias(@emoji)
+        if emoji != nil and emoji_dir
           '<img alt="' + @emoji + '" src="' + config['emoji_dir'] + "/#{@emoji}.png" + '" class="emoji" />'
         else
-          ""
+          @emoji
         end
       else
         ""
