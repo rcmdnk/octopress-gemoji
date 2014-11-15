@@ -22,7 +22,7 @@ module Jekyll
 
         emoji = Emoji.find_by_alias(@emoji)
         if emoji != nil and emoji_dir
-          '<img alt="' + @emoji + '" src="' + config['emoji_dir'] + "/#{@emoji}.png" + '" class="emoji" />'
+          '<img alt="' + @emoji + '" src="' + config['emoji_dir'] + "/" + emoji.image_filename + '" class="emoji" />'
         else
           @emoji
         end
@@ -38,15 +38,12 @@ module Jekyll
       return false if not config['emoji_dir']
       return false if config['emoji_dir'].start_with?('http')
       emoji_dir = File.join(config['source'], config['emoji_dir'])
-      return false if File.exist?(emoji_dir + '/smiley.png')
-
-      # Make Emoji directory
-      FileUtils.mkdir_p(emoji_dir)
+      return false if File.exist?(emoji_dir)
+      emoji_dir_pub = File.join(config['destination'], config['emoji_dir'])
 
       # Copy Gemoji files
-      Dir["#{Emoji.images_path}/emoji/*.png"].each do |src|
-        FileUtils.cp src, emoji_dir
-      end
+      p "Copying #{Emoji.images_path}/emoji to #{emoji_dir}..."
+      FileUtils.cp_r Emoji.images_path + "/emoji", emoji_dir
     end
   end
 
