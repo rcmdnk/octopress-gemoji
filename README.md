@@ -37,3 +37,17 @@ See [EMOJI CHEAT SHEET](http://www.emoji-cheat-sheet.com/) for more emojis.
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rcmdnk/octopress-gemoji/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+# Update for gemoji-2.x
+
+From [gemoji](https://github.com/github/gemoji) 2.X,
+it changed image directory structures and names.
+
+To update octopress-gemoji for it, you need to:
+
+- Update octopress-gemoji to the latest version.
+- Remove **source/images/emoji/** directory from your Octopress.
+- Do at least 1 additional `rake generate` before the final `rake generate` for publishing.
+(This is needed to copy pictures from gemoji to Octopress images directory.)
+
+
+
