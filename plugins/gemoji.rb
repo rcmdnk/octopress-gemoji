@@ -7,6 +7,7 @@ module Jekyll
   class Gemoji < Liquid::Tag
     def initialize(name, markup, tokens)
       @emoji = markup
+      @emoji.strip!
     end
 
     def render(context)
@@ -24,6 +25,9 @@ module Jekyll
         if emoji != nil and emoji_dir
           '<img alt="' + @emoji + '" src="' + config['emoji_dir'] + "/" + emoji.image_filename + '" class="emoji" />'
         else
+          print "\e[31m"
+          puts "gemoji warning: #{@emoji} was not found! @#{context['page']['url']}"
+          print "\e[0m"
           @emoji
         end
       else
@@ -39,7 +43,6 @@ module Jekyll
       return false if config['emoji_dir'].start_with?('http')
       emoji_dir = File.join(config['source'], config['emoji_dir'])
       return false if File.exist?(emoji_dir)
-      emoji_dir_pub = File.join(config['destination'], config['emoji_dir'])
 
       # Copy Gemoji files
       p "Copying #{Emoji.images_path}/emoji to #{emoji_dir}..."
