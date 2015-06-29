@@ -6,7 +6,7 @@ octopress-gemoji provides "gemoji" tag to use emoji in Octopress.
 :memo:
 There is a similar plugin, [jekyll-emoji](https://github.com/chriskempson/jekyll-emoji), which provides filter for emoji description (such `:smile:`).
 
-# Installation
+## Installation
 
 1. Copy `plugins/gemoji.rb` to your `plugins` directory,
 and `sass/plugins/_gemoji.scss` to your `sass/plugins/` directory.
@@ -26,7 +26,8 @@ Done!
 
 If you already have these settings for [jekyll-emoji](https://github.com/chriskempson/jekyll-emoji), you don't need to add them.
 
-# Usage
+## Usage
+
 Use tag `gemoji` + `emoji names`:
 
     {%gemoji smile%}
@@ -37,7 +38,7 @@ See [EMOJI CHEAT SHEET](http://www.emoji-cheat-sheet.com/) for more emojis.
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rcmdnk/octopress-gemoji/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
-# Update for gemoji-2.x
+## Update for gemoji-2.x
 
 From [gemoji](https://github.com/github/gemoji) 2.X,
 it changed image directory structures and names.
