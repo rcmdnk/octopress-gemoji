@@ -30,7 +30,7 @@ If you already have these settings for [jekyll-emoji](https://github.com/chriske
 
 Use tag `gemoji` + `emoji names`:
 
-    {%gemoji smile%}
+    {% gemoji smile %}
 will be :smile:.
 
 See [EMOJI CHEAT SHEET](http://www.emoji-cheat-sheet.com/) for more emojis.
