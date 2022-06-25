@@ -45,8 +45,8 @@ module Jekyll
       return false if File.exist?(emoji_dir)
 
       # Copy Gemoji files
-      p "Copying #{Emoji.images_path}/emoji to #{emoji_dir}..."
-      FileUtils.cp_r Emoji.images_path + "/emoji", emoji_dir
+      p "Copying #{Emoji.images_path} to #{emoji_dir}..."
+      FileUtils.cp_r Emoji.images_path, emoji_dir
     end
   end
 
